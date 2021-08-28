@@ -1,21 +1,22 @@
 <!doctype html>
 <html lang="pt_br">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>WDEV Vagas!</title>
-  </head>
-  <body class="bg-dark text-light">
-    
-    <div class="container">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-        <div class="jumbotron bg-danger">
-            <h1>WDEV Vagas</h1>
-            <p> Exemplo de CRUD com PHP orientado a objetos</p>
-        </div>
-        
+  <title>WDEV Vagas!</title>
+</head>
+
+<body class="bg-dark text-light">
+
+  <div class="container">
+
+    <div class="jumbotron bg-danger">
+      <h1>WDEV Vagas</h1>
+      <p> Exemplo de CRUD com PHP orientado a objetos</p>
+    </div>

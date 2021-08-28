@@ -3,44 +3,47 @@
 namespace App\Entity;
 
 use \App\Db\Database;
+use PDO;
 
-class Vaga{
+class Vaga
+{
 
-     /**
+    /**
      * Identificador unico da vaga
      * @var integer
      */
-     public $id;
+    public $id;
 
-     /**
+    /**
      * Titulo da vaga
      * @var string
      */
-     public $titulo;
+    public $titulo;
 
-     /**
+    /**
      * Descrição da vaga
      * @var string
      */
-     public $descricao;
+    public $descricao;
 
-     /**
+    /**
      * Define se a vaga ativa
      * @var string(s/n)
      */
-     public $ativo;
+    public $ativo;
 
-     /**
+    /**
      * Data de publicação da vaga
      * @var string
      */
-     public $data;
+    public $data;
 
     /**
-    * Método responsavel por cadastrar nova vaga no banco
-    * @return boolean
-    */
-    public function cadastrar(){
+     * Método responsavel por cadastrar nova vaga no banco
+     * @return boolean
+     */
+    public function cadastrar()
+    {
         //definir a data
         $this->data = date('Y-m-d H:i:s');
 
@@ -53,10 +56,63 @@ class Vaga{
             'data' => $this->data
         ]);
 
-    //    echo "<pre>"; print_r($this); echo "</pre>"; exit;
+        //retornar sucesso
+        return true;
+    }
+
+    /**
+     * Método responsavel por atualizar a vaga no banco
+     * @return boolean
+     */
+
+    public function atualizar()
+    {
+
+        return (new Database('vagas'))->update('id = ' . $this->id, [
+            'titulo' => $this->titulo,
+            'descricao' => $this->descricao,
+            'ativo' => $this->ativo,
+            'data' => $this->data
+        ]);
 
         //retornar sucesso
         return true;
     }
 
+    /**
+     * Método responsavel por exluir a vaga do banco
+     * @return boolean
+     */
+
+    public function excluir()
+    {
+
+        return (new Database('vagas'))->delete('id = ' . $this->id);
+
+        //retornar sucesso
+        return true;
+    }
+
+
+    /**
+     * Método responsavel por obter as vaga do banco
+     * @param string $where
+     * @param string $order
+     * @param string $limit
+     * @return array
+     */
+    public static function getVagas($where = null, $order = null, $limit = null)
+    {
+        return (new Database('vagas'))->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
+    }
+
+    /**
+     * Método responsavel por bucar uma vaga com base no seu id
+     * @param integer $id
+     * @return Vaga
+     */
+    public static function getVaga($id)
+    {
+        return (new Database('vagas'))->select('id =' . $id)->fetchObject(self::class);
+    }
 }
