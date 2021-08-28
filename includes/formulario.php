@@ -34,7 +34,7 @@
 
                 <div class="form-check form-check-inline">
                     <label class="form-control">
-                        <input type="radio" name="ativo" value="n" <?= isset($obVaga->ativo) == 'n' ? 'checked' : '' ?>> Inativo
+                        <input type="radio" name="ativo" value="n" <?= (isset($obVaga->ativo) and $obVaga->ativo == 'n') ? 'checked':'' ?>> Inativo
                     </label>
                 </div>
             </div>
