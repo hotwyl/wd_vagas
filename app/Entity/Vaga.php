@@ -107,6 +107,18 @@ class Vaga
     }
 
     /**
+     * Método responsavel por obter a quantidade de vagas do banco
+     * @param string $where
+     * @param string $order
+     * @param string $limit
+     * @return array
+     */
+    public static function getQuantidadeVagas($where = null)
+    {
+        return (new Database('vagas'))->select($where, null, null, 'COUNT(*) as qtd')->fetchObject()->qtd;
+    }
+
+    /**
      * Método responsavel por bucar uma vaga com base no seu id
      * @param integer $id
      * @return Vaga
