@@ -5,6 +5,10 @@ require __DIR__ . '/vendor/autoload.php';
 define('TITLE', 'Editar Vaga');
 
 use \App\Entity\Vaga;
+use \App\Session\Login;
+
+//obriga usuario a estar logado
+Login::requireLogin();
 
 //Validação do ID
 

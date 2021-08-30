@@ -3,6 +3,10 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use \App\Entity\Vaga;
+use \App\Session\Login;
+
+//obriga usuario a estar logado
+Login::requireLogin();
 
 //Validação do ID
 if (!isset($_GET['id']) or !is_numeric($_GET['id'])) {

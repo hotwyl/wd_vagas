@@ -4,6 +4,10 @@ require __DIR__ . '/vendor/autoload.php';
 
 use \App\Entity\Vaga;
 use \App\Db\Pagination;
+use \App\Session\Login;
+
+//obriga usuario a estar logado
+Login::requireLogin();
 
 //busca
 $busca = filter_input(INPUT_GET, 'busca', FILTER_SANITIZE_STRING);
@@ -28,7 +32,7 @@ $where = implode(' AND ', $condicoes);
 $quantidadeVagas = Vaga::getQuantidadeVagas($where);
 
 //paginação
-$obPagination = new Pagination($quantidadeVagas, $_GET['pagina'] ?? 1, 3);
+$obPagination = new Pagination($quantidadeVagas, $_GET['pagina'] ?? 1, 10);
 
 //obtem as vagas
 $vagas = Vaga::getVagas($where, null, $obPagination->getLimit());

@@ -1,3 +1,17 @@
+<?php
+
+use \App\Session\Login;
+
+//dados do usuario logado
+$usuarioLogado = Login::getUsuarioLogado();
+
+//detalhes do usuario
+$usuario = $usuarioLogado ?
+  $usuarioLogado['nome'] . '<a href="logout.php" class="text-light font-weight-bold ml-2">Sair</a>' :
+  'Visitante <a href="login.php" class="text-light font-weight-bold ml-2">Entrar</a>';
+
+?>
+
 <!doctype html>
 <html lang="pt_br">
 
@@ -19,4 +33,8 @@
     <div class="jumbotron bg-danger">
       <h1>WDEV Vagas</h1>
       <p> Exemplo de CRUD com PHP orientado a objetos</p>
+
+      <hr class="border-light">
+
+      <div class="d-flex justify-content-start"><?= $usuario ?></div>
     </div>
