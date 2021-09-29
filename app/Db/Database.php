@@ -12,25 +12,25 @@ class Database
      * Host de Conexão com o banco de dados
      * @var string
      */
-    const HOST = 'localhost';
+    const HOST = 'nspro32.hostgator.com.br';
 
     /**
      * Nome do banco de dados
      * @var string
      */
-    const NAME = 'wdev_vagas';
+    const NAME = 'hg3won41_testes';
 
     /**
      * Usuario do banco de dados
      * @var string
      */
-    const USER = 'root';
+    const USER = 'hg3won41_hotwyl';
 
     /**
      * Senha de acesso ao banco de dados
      * @var string
      */
-    const PASS = '';
+    const PASS = 'willfrombrasil';
 
     /**
      * Nome da tabela a ser manipulada

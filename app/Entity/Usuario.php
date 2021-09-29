@@ -39,7 +39,7 @@ class Usuario
     public function cadastrar()
     {
         //Database
-        $obDatabase = new Database('usuarios');
+        $obDatabase = new Database('vagas_usuarios');
 
         //insere um novo usuario
         $this->id = $obDatabase->insert([
@@ -59,6 +59,6 @@ class Usuario
      */
     public static function getUsuarioPorEmail($email)
     {
-        return (new Database('usuarios'))->select('email="' . $email . '"')->fetchObject(self::class);
+        return (new Database('vagas_usuarios'))->select('email="' . $email . '"')->fetchObject(self::class);
     }
 }
